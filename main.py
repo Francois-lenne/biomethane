@@ -1,6 +1,8 @@
 from google.cloud import storage
 import requests
 from io import BytesIO
+import os
+import datetime
 
 def upload_csv_from_url(url, bucket_name, destination_blob_name):
     # Récupérer le contenu du fichier CSV depuis l'URL
@@ -24,8 +26,9 @@ def upload_csv_from_url(url, bucket_name, destination_blob_name):
     print(f"Fichier CSV téléchargé depuis {url} et stocké dans gs://{bucket_name}/{destination_blob_name}")
 
 # Exemple d'utilisation
-url = "https://exemple.com/mon_fichier.csv"
-bucket_name = "mon_bucket"
-destination_blob_name = "dossier/mon_fichier.csv"
+url = "https://www.data.gouv.fr/fr/datasets/r/1b7bb850-b438-452a-bba3-cd703410a036"
 
-upload_csv_from_url(url, bucket_name, destination_blob_name)
+
+destination_blob_name = "data/biomethane-" +  datetime.datetime.now().strftime('%Y-%m-%d') + ".csv" ## upload the file with the current date
+
+upload_csv_from_url(url, os.environ.get('bucket'), destination_blob_name)
