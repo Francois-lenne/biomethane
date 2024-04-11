@@ -1,5 +1,5 @@
 
-# import
+# import package
 from google.cloud import storage
 import requests
 from io import BytesIO
