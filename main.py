@@ -32,7 +32,7 @@ def upload_csv_from_url(url, bucket_name, destination_blob_name):
 
 # main function
 
-def main():
+def main(request):
     url = "https://www.data.gouv.fr/fr/datasets/r/1b7bb850-b438-452a-bba3-cd703410a036"
     destination_blob_name = "data/biomethane-" + datetime.datetime.now().strftime('%Y-%m-%d') + ".csv"
     upload_csv_from_url(url, os.environ.get('bucket'), destination_blob_name)
