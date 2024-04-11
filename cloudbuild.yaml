@@ -1,3 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['functions', 'deploy', 'biomethane', '--runtime', 'python310', '--trigger-http', '--allow-unauthenticated', '--source', '.']
+options:
+  logging: 
+    cloudLogging: false  # Désactive la journalisation Cloud
