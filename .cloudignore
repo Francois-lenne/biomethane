@@ -3,3 +3,7 @@
 *.log
 temp
 *.pyc
+.gcloudignore
+.git
+.gitignore
+node_modules
