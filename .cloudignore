@@ -1,0 +1,5 @@
+*.md
+*.sql
+*.log
+temp
+*.pyc
